@@ -1,0 +1,15 @@
+{
+  "pipeline.py": "ab93fb0781403a9fe7d1da1911693dd9d5d42e96ea368bc13ec48ce5c46de3d1",
+  "bootstrap_kaggle_v2.py": "b05f2bfba9454d0862ffb66f8def04a9fc3a282d482676d9cfa2024b968c1737",
+  "notebooks/36_RSNA_Comando_Unico_REV2_CORREGIDO_v2.ipynb": "7ce57ce8b330453c41e9859900be6e563debbfbcc91fe5ed98ac629b894e906f",
+  "tests/preparacion_v2/bootstrap_kaggle_v2.py": "b05f2bfba9454d0862ffb66f8def04a9fc3a282d482676d9cfa2024b968c1737",
+  "tests/preparacion_v2/test_preparacion_celda_unica.py": "9b6b874572b3f00d3f44b733496b91409f27476d96bd242501bc03f26bad4e63",
+  "tests/preparacion_v2/pipeline_antes_ajuste_gradcam.txt": "1d0a28bd56dbb3a7cd8600e44fd6263f920dd0a2de5cd0c2497fc10b5b713e71",
+  "tests/preparacion_v2/ejecutar_kaggle.py": "104dc206fefb35f1cccd9fd4c14e7265133e9d7557c519da0e8ff1723b7988a2",
+  "tests/preparacion_v2/ajuste_gradcam.json": "c00fc371c40d09987a884e66fdda1584c8572b87c3b1e6d26d7e057b4b39cebb",
+  "README.md": "ff8f81fc599d1792cc93caa3ebcfa1827f344fca4f50c8985e868dd9a4fe0e98",
+  "docs/EJECUCION_KAGGLE.md": "de050907a73f7dd7738ab1c9091a8f29a531dd73e2afe27d480159d259282fbb",
+  "docs/CIERRE_COMANDO_UNICO_20261028.md": "4ff5ddac71d9ef9c1a522b307941acebf4d18a459c75bbd17f6f0ce3ef4a4ddb",
+  "docs/verificacion_T4_20261028.json": "31c7f13f7d7508de6584d45bb0b1e8b65ade319bf8af37a7f0ea18aebfcd20c7",
+  "tests/preparacion_v2/ejecutar_pruebas_windows.py": "d577ed2f74166ac884df39d539f4727c37444336ee068893955e58e1d6b0792f"
+}

@@ -1,0 +1,6 @@
+{
+  "ajuste": "Limpiar gradientes antes de Grad-CAM",
+  "sha256_anterior": "1d0a28bd56dbb3a7cd8600e44fd6263f920dd0a2de5cd0c2497fc10b5b713e71",
+  "sha256_corregido": "ab93fb0781403a9fe7d1da1911693dd9d5d42e96ea368bc13ec48ce5c46de3d1",
+  "modulos_congelados": "sin cambios"
+}

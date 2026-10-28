@@ -228,6 +228,7 @@ def inference(config,private,base,filtered,manifest,release,filtered_release,gol
             for case in plan['cases']:
                 case=dict(case)
                 x,m=cache[case['StudyInstanceUID']]
+                model.zero_grad(set_to_none=True)
                 result=gradcam(model,model.backbone.layer4[-1],torch.from_numpy(x[None]).to(device),torch.from_numpy(m[None]).to(device),case['class_index'],POLICY_ID)
                 if train:
                     probability=float(result['probabilities'][0,case['class_index']])

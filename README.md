@@ -2,25 +2,27 @@
 
 Proyecto de examen parcial del curso MIA-07, UNI, 2026-II. Se comparan una CNN propia y ResNet18 ajustada desde ImageNet para doce condiciones por estudio. Las etiquetas de entrenamiento son débiles y parcialmente revisadas. Los reportes supervisan el entrenamiento; no son entradas del clasificador de imágenes.
 
-## Descarga del paquete de reproducción
+## Ejecución completa en Kaggle
 
-La [Release `rev2-reproduccion-v1`](https://github.com/nick5uni/rsna-knee-multietiqueta/releases/tag/rev2-reproduccion-v1) reúne los insumos necesarios para el equipo y el evaluador:
+Usar el [notebook corregido de una celda](notebooks/36_RSNA_Comando_Unico_REV2_CORREGIDO_v2.ipynb). El notebook anterior permanece como historial y no debe utilizarse para una nueva ejecución.
 
-- [Paquete privado completo, aproximadamente 709 MB](https://github.com/nick5uni/rsna-knee-multietiqueta/releases/download/rev2-reproduccion-v1/Paquete_Privado_RSNA_REV2_ComandoUnico.zip).
-- [SHA256SUMS.json](https://github.com/nick5uni/rsna-knee-multietiqueta/releases/download/rev2-reproduccion-v1/SHA256SUMS.json), con los hashes esperados del paquete y del notebook.
-- [Notebook de una celda, correspondiente a esta Release](https://github.com/nick5uni/rsna-knee-multietiqueta/blob/rev2-reproduccion-v1/notebooks/36_RSNA_Comando_Unico_REV2.ipynb).
+1. Crear un notebook privado en Kaggle e importar el notebook corregido.
+2. Adjuntar la competencia RSNA Knee Abnormality Detection y aceptar sus condiciones con la cuenta correspondiente.
+3. Activar GPU Tesla T4 e Internet y ejecutar la única celda. La celda descarga el ZIP original desde la [Release base](https://github.com/nick5uni/rsna-knee-multietiqueta/releases/tag/rev2-reproduccion-v1), comprueba su SHA-256, prepara el entorno y lanza las cuatro configuraciones. Si ya hay un ZIP íntegro en Input o caché, lo reutiliza. No necesita los cuatro ZIP internos montados por separado.
 
-Descargar el paquete y el notebook con una cuenta que tenga acceso al repositorio privado. En un notebook nuevo y privado de Kaggle, adjuntar la competencia RSNA y el paquete como dataset privado; activar T4 e Internet y ejecutar la única celda. El paquete admite que Kaggle conserve el ZIP o lo descomprima al crear el dataset. No se necesitan credenciales GitHub dentro de Kaggle.
+El paquete base se conserva sin cambios: [Paquete_Privado_RSNA_REV2_ComandoUnico.zip](https://github.com/nick5uni/rsna-knee-multietiqueta/releases/download/rev2-reproduccion-v1/Paquete_Privado_RSNA_REV2_ComandoUnico.zip), SHA-256 `b4897e57edf9b426ce6040ab3791f2ac0e8a63831467881b773aed172825160e`. El hash del notebook antiguo incluido en esa Release no corresponde al notebook corregido: utilizar [los hashes del cierre](docs/SHA256SUMS_cierre_20261028.json).
 
-Con el paquete ya preparado y los datos montados, la celda lanza:
+No basta con el paquete descomprimido automáticamente por Kaggle: puede perder los ZIP internos. Se recomienda la descarga directa que realiza la celda, o adjuntar el ZIP original íntegro. Si el repositorio cambia a privado, esa descarga sin autenticación dejará de funcionar; en tal caso debe proporcionarse el ZIP íntegro por Input. No introducir credenciales en el código.
+
+El comando de entrenamiento que ejecuta la preparación es:
 
 ```bash
 python ejecutar_kaggle.py --mode train
 ```
 
-La preparación inicial es la misma para el equipo y el evaluador. El lanzador comprueba las rutas y los insumos, ejecuta las pruebas, encadena las cuatro configuraciones y guarda un ZIP con los resultados y sus hashes. El dataset DICOM de la competencia se obtiene por separado desde su fuente autorizada.
+También se ofrece `bootstrap_kaggle_v2.py`, idéntico a la celda, para ejecutar `python bootstrap_kaggle_v2.py` dentro de Kaggle. El dataset DICOM se obtiene por separado desde su fuente autorizada.
 
-**Estado de verificación:** 38 pruebas locales correctas, extracción e integridad del paquete comprobadas, auditoría desde la copia extraída correcta y reproducción DICOM en CPU correcta. La ejecución completa de los cuatro entrenamientos mediante este lanzador en T4 todavía está pendiente; publicar la Release no acredita esa ejecución.
+**Estado verificado el 28/10/2026:** el lanzador corregido completó cuatro entrenamientos nuevos, evaluaciones y Grad-CAM en Tesla T4, con salida 0 y `COMPROBACION COMPLETA: OK | nuevo entrenamiento: True`. Se contrastaron los hashes de los 64 archivos del ZIP de resultados. La preparación se ejecutó en varias celdas. La copia consolidada de una celda superó cinco pruebas funcionales con lanzamiento simulado; no se ha vuelto a ejecutar íntegramente en una sesión T4 limpia. Véanse [el registro de cierre](docs/CIERRE_COMANDO_UNICO_20261028.md) y [la evidencia agregada](docs/verificacion_T4_20261028.json).
 
 ## Alcance y versiones
 
@@ -72,7 +74,7 @@ python pipeline.py --config config.local.json --mode train
 
 Este modo prepara también los 240 TRAIN y repite las cuatro configuraciones desde sus inicializaciones acordadas, conservando el motor, las pérdidas, el lector, la política BN por estudio y los parámetros. ResNet18 usa ImageNet IMAGENET1K_V1; la CNN propia parte de inicialización aleatoria. Requiere acceso a los pesos oficiales ImageNet o su caché local, y puede consumir horas de GPU. Se guardan best.pt y last.pt y se continúa con la evaluación y los mapas. No se usa un checkpoint entrenado como inicialización.
 
-Las cuatro corridas académicas originales están acreditadas por sus ZIP y notebooks ejecutados. La nueva integración del modo train se ofrece para repetirlas; no se declara que se hayan vuelto a realizar cuatro entrenamientos completos durante el cierre de entrega en CPU.
+Las cuatro corridas académicas originales se conservan. El 28/10/2026 se completó además la ejecución del lanzador corregido en T4, con cuatro entrenamientos nuevos; esta comprobación no sustituye los resultados del informe.
 
 ### Auditoría ligera
 
@@ -84,15 +86,9 @@ Verifica contratos y reproduce extracción textual y métricas desde CSV, sin in
 
 ## Ejecución en Kaggle sin editar rutas
 
-Se proporciona `notebooks/36_RSNA_Comando_Unico_REV2.ipynb` y el archivo `Paquete_Privado_RSNA_REV2_ComandoUnico.zip`, descargable desde la Release privada enlazada arriba. El mismo paquete se utiliza para el equipo y para el evaluador. Se adjuntan la competencia y el paquete privado, se activa T4 e Internet y se ejecuta una celda. El lanzador detecta rutas, comprueba el entorno, prepara dependencias ligeras, ejecuta pruebas y encadena las cuatro configuraciones con el pipeline existente:
+Seguir la preparación inicial y usar `notebooks/36_RSNA_Comando_Unico_REV2_CORREGIDO_v2.ipynb`, o `python bootstrap_kaggle_v2.py` dentro de Kaggle. Véase [EJECUCION_KAGGLE.md](docs/EJECUCION_KAGGLE.md). Se comprueba el paquete original antes de aplicar únicamente la limpieza de gradientes del orquestador anterior a Grad-CAM. Se mantienen los módulos congelados, datos, parámetros y política BatchNorm.
 
-```bash
-python ejecutar_kaggle.py --mode train
-```
-
-Los resultados se escriben en una carpeta nueva y se empaquetan automáticamente con checkpoints, predicciones, métricas, Grad-CAM, log y hashes. No se necesitan credenciales GitHub dentro del notebook. Véase `docs/EJECUCION_KAGGLE.md`. El paquete también funciona si Kaggle descomprime el ZIP al crear el dataset privado.
-
-La preparación local no acredita todavía la ejecución T4 completa. No hay reanudación automática del lanzador: una nueva ejecución crea otra carpeta y repite las cuatro configuraciones. Los resultados del informe no se reemplazan por las nuevas salidas sin revisión.
+Las cuatro configuraciones se ejecutan secuencialmente. Cada ejecución crea una carpeta nueva y un ZIP con checkpoints, predicciones, métricas, mapas y hashes. No hay reanudación automática: repetir el lanzamiento vuelve a entrenar. Los resultados históricos no se sustituyen automáticamente.
 
 ## Pruebas
 

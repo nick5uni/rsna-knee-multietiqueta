@@ -1,18 +1,11 @@
-# Ejecución del comando único REV2
+# Ejecución del comando único REV2 en Kaggle
 
-Archivos de esta carpeta:
-- 36_RSNA_Comando_Unico_REV2.ipynb: importar en un notebook nuevo y privado de Kaggle.
-- Paquete_Privado_RSNA_REV2_ComandoUnico.zip: subir como dataset PRIVADO y adjuntarlo al notebook. Incluye código, etiquetas consensuadas, máscaras, cierres, pruebas, referencias y los cuatro ZIP originales. No contiene el dataset DICOM; se adjunta la competencia por separado.
-- SHA256SUMS.json: comprobación del ZIP y del notebook.
+Usar `notebooks/36_RSNA_Comando_Unico_REV2_CORREGIDO_v2.ipynb`, importar en un notebook nuevo privado, adjuntar la competencia, activar Tesla T4 e Internet y ejecutar la única celda. La celda y `bootstrap_kaggle_v2.py` contienen el mismo código.
 
-Preparación: adjuntar la competencia y el dataset privado, activar T4 e Internet y ejecutar la única celda del notebook. No se requiere conectar GitHub ni introducir tokens. No importar sobre los notebooks de las corridas anteriores. La copia del código incluida en el paquete es la que se ejecuta y queda identificada mediante hashes.
+La entrada descarga el ZIP original de la Release base y verifica su SHA-256; también admite el ZIP íntegro adjunto como Input o en caché. No depender del paquete descomprimido automáticamente por Kaggle: sus cuatro ZIP internos pueden faltar. No cambiar la Release ni sus hashes. El notebook corregido tiene hashes propios en `SHA256SUMS_cierre_20261028.json`.
 
-Para un evaluador que ya tiene código, insumos privados y competencia montados en Kaggle, el comando es:
+Se extrae y verifica el manifiesto original, se comprueban los módulos congelados y se aplica la limpieza de gradientes del pipeline antes de Grad-CAM. Se ejecuta una sola vez `python ejecutar_kaggle.py --mode train`. Las cuatro configuraciones se entrenan secuencialmente desde las inicializaciones acordadas; no lanzar en paralelo.
 
-    python ejecutar_kaggle.py --mode train
+Descargar el ZIP final y el notebook con salidas y detener la GPU. No hay reanudación automática. Si se interrumpe, conservar las salidas antes de volver a lanzar.
 
-El lanzador genera config.kaggle.local.json sin editar rutas. Mantiene el entrenamiento acordado y crea resultados nuevos. Las cuatro configuraciones se ejecutan secuencialmente en la T4; no se deben lanzar en paralelo dentro de este notebook.
-
-Pasos finales: descargar Resultados_Comando_Unico_REV2_train_*.zip, descargar el notebook con sus salidas y detener la GPU. La prueba completa se acredita solo después de terminar las cuatro configuraciones y pasar las comprobaciones finales. No se promete igualdad bit a bit con las corridas anteriores ni se sustituyen las cifras del informe automáticamente.
-
-Limitación: no hay reanudación automática del lanzador si Kaggle interrumpe la sesión. Conservar las salidas parciales antes de reiniciar. Si el runtime no coincide con la referencia, se detiene con un mensaje, en lugar de entrenar con otra configuración.
+El lanzador corregido terminó en T4 el 28/10/2026. La preparación se ejecutó en varias celdas. La copia consolidada final pasó cinco pruebas funcionales con lanzamiento simulado, sin otra ejecución GPU. Véase `CIERRE_COMANDO_UNICO_20261028.md`.

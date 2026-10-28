@@ -1,0 +1,60 @@
+{
+  "fecha": "2026-10-28",
+  "estado": "OK",
+  "modo": "train",
+  "nuevo_entrenamiento": true,
+  "gpu": "Tesla T4",
+  "pipeline_sha256": "ab93fb0781403a9fe7d1da1911693dd9d5d42e96ea368bc13ec48ce5c46de3d1",
+  "archivos_resultados_sha256_verificados": 64,
+  "zip_resultados": "Resultados_Comando_Unico_REV2_train_20261028T202738980849Z.zip",
+  "zip_resultados_sha256": "65750ea74f83ba399092f9569495535de4dbbd51b56960cc8f0ee231f2da7255",
+  "versiones": {
+    "Python": "3.13.15",
+    "numpy": "2.1.3",
+    "torch": "2.11.0+cu128",
+    "torchvision": "0.26.0+cu128",
+    "pydicom": "3.0.2",
+    "Pillow": "12.3.0",
+    "CUDA": "12.8"
+  },
+  "matrices": {
+    "train": 240,
+    "dev": 60,
+    "known_train": 1458,
+    "known_train_filtered": 1295,
+    "known_dev": 364,
+    "excluded_train": 163,
+    "gold_excluded": 58
+  },
+  "corridas": {
+    "CNN_BCE": {
+      "selected_epoch": 17,
+      "best_dev_bce": 0.605648618887414,
+      "epochs_completed": 20,
+      "gpu": "Tesla T4"
+    },
+    "ResNet18_BCE": {
+      "selected_epoch": 8,
+      "best_dev_bce": 0.5158313612279656,
+      "epochs_completed": 11,
+      "gpu": "Tesla T4"
+    },
+    "ResNet18_FOCAL": {
+      "selected_epoch": 19,
+      "best_dev_bce": 0.5096682385428921,
+      "epochs_completed": 20,
+      "gpu": "Tesla T4"
+    },
+    "ResNet18_BCE_FILTRO": {
+      "selected_epoch": 1,
+      "best_dev_bce": 0.8188992017409303,
+      "epochs_completed": 4,
+      "gpu": "Tesla T4"
+    }
+  },
+  "gradcam_casos": 6,
+  "gradcam_estado_intacto": true,
+  "celda_consolidada": "Cinco pruebas funcionales; no ejecutada nuevamente en GPU",
+  "evidencia_gpu": "Procedimiento ejecutado en varias celdas; salida 0 y COMPROBACION COMPLETA: OK",
+  "resultados_del_informe": "Conservados; no sustituidos por esta verificacion"
+}
