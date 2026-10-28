@@ -2,6 +2,26 @@
 
 Proyecto de examen parcial del curso MIA-07, UNI, 2026-II. Se comparan una CNN propia y ResNet18 ajustada desde ImageNet para doce condiciones por estudio. Las etiquetas de entrenamiento son débiles y parcialmente revisadas. Los reportes supervisan el entrenamiento; no son entradas del clasificador de imágenes.
 
+## Descarga del paquete de reproducción
+
+La [Release `rev2-reproduccion-v1`](https://github.com/nick5uni/rsna-knee-multietiqueta/releases/tag/rev2-reproduccion-v1) reúne los insumos necesarios para el equipo y el evaluador:
+
+- [Paquete privado completo, aproximadamente 709 MB](https://github.com/nick5uni/rsna-knee-multietiqueta/releases/download/rev2-reproduccion-v1/Paquete_Privado_RSNA_REV2_ComandoUnico.zip).
+- [SHA256SUMS.json](https://github.com/nick5uni/rsna-knee-multietiqueta/releases/download/rev2-reproduccion-v1/SHA256SUMS.json), con los hashes esperados del paquete y del notebook.
+- [Notebook de una celda, correspondiente a esta Release](https://github.com/nick5uni/rsna-knee-multietiqueta/blob/rev2-reproduccion-v1/notebooks/36_RSNA_Comando_Unico_REV2.ipynb).
+
+Descargar el paquete y el notebook con una cuenta que tenga acceso al repositorio privado. En un notebook nuevo y privado de Kaggle, adjuntar la competencia RSNA y el paquete como dataset privado; activar T4 e Internet y ejecutar la única celda. El paquete admite que Kaggle conserve el ZIP o lo descomprima al crear el dataset. No se necesitan credenciales GitHub dentro de Kaggle.
+
+Con el paquete ya preparado y los datos montados, la celda lanza:
+
+```bash
+python ejecutar_kaggle.py --mode train
+```
+
+La preparación inicial es la misma para el equipo y el evaluador. El lanzador comprueba las rutas y los insumos, ejecuta las pruebas, encadena las cuatro configuraciones y guarda un ZIP con los resultados y sus hashes. El dataset DICOM de la competencia se obtiene por separado desde su fuente autorizada.
+
+**Estado de verificación:** 38 pruebas locales correctas, extracción e integridad del paquete comprobadas, auditoría desde la copia extraída correcta y reproducción DICOM en CPU correcta. La ejecución completa de los cuatro entrenamientos mediante este lanzador en T4 todavía está pendiente; publicar la Release no acredita esa ejecución.
+
 ## Alcance y versiones
 
 - 300 estudios: 240 TRAIN y 60 DEV. REV2 contiene 1.458 etiquetas TRAIN conocidas y 364 DEV. La variante filtrada excluye 163 negativos indirectos OA solo en TRAIN y utiliza 1.295 etiquetas.
@@ -25,7 +45,7 @@ En Linux se utilizan `python3.13 -m venv .venv` y `.venv/bin/python`. Para repet
 
 1. Obtener los datos de la competición desde la fuente autorizada, aceptando sus reglas con la cuenta correspondiente: <https://www.kaggle.com/competitions/rsna-knee-abnormality-detection>.
 2. Disponer de `train.csv`, `train_series.csv` y del ZIP original o las series DICOM extraídas. No es necesario extraer todo el ZIP de 265 GB: el programa extrae únicamente las series de los manifiestos.
-3. Obtener por el canal privado del equipo el paquete de insumos congelados y colocarlo como `private/`. Contiene matrices, manifiestos, decisiones de idioma, referencias y los cuatro ZIP completos de corridas con best.pt y last.pt. `private/SHA256SUMS.json` y los manifiestos verifican su integridad. No se regeneran decisiones de consenso a partir de reglas bilingües posteriores.
+3. Descargar el paquete de insumos congelados desde la Release indicada arriba. Al extraerlo, utilizar la carpeta `rsna-knee-multietiqueta/private/` junto al código de esa versión. Contiene matrices, manifiestos, decisiones de idioma, referencias y los cuatro ZIP completos de corridas con best.pt y last.pt. `private/SHA256SUMS.json` y los manifiestos verifican su integridad. No se regeneran decisiones de consenso a partir de reglas bilingües posteriores.
 4. Copiar `config.example.json` a `config.local.json` y configurar las rutas. Las rutas relativas se resuelven desde esta carpeta, no desde el directorio de invocación. `data_root`, si se proporciona, debe contener `train_series/UID/SID/*.dcm`.
 
 Los datos, reportes clínicos, manifiestos con identificadores, checkpoints, resultados por estudio, claves y archivos de configuración local se excluyen de Git. No se reemplazan insumos privados por ejemplos inventados cuando faltan archivos. Los ejemplos artificiales de las pruebas no son resultados académicos.
@@ -64,7 +84,7 @@ Verifica contratos y reproduce extracción textual y métricas desde CSV, sin in
 
 ## Ejecución en Kaggle sin editar rutas
 
-Se proporciona `notebooks/36_RSNA_Comando_Unico_REV2.ipynb` y, por el canal privado, `Paquete_Privado_RSNA_REV2_ComandoUnico.zip`. El mismo paquete se utiliza para el equipo y para el evaluador. Se adjuntan la competencia y el paquete privado, se activa T4 e Internet y se ejecuta una celda. El lanzador detecta rutas, comprueba el entorno, prepara dependencias ligeras, ejecuta pruebas y encadena las cuatro configuraciones con el pipeline existente:
+Se proporciona `notebooks/36_RSNA_Comando_Unico_REV2.ipynb` y el archivo `Paquete_Privado_RSNA_REV2_ComandoUnico.zip`, descargable desde la Release privada enlazada arriba. El mismo paquete se utiliza para el equipo y para el evaluador. Se adjuntan la competencia y el paquete privado, se activa T4 e Internet y se ejecuta una celda. El lanzador detecta rutas, comprueba el entorno, prepara dependencias ligeras, ejecuta pruebas y encadena las cuatro configuraciones con el pipeline existente:
 
 ```bash
 python ejecutar_kaggle.py --mode train
