@@ -198,6 +198,10 @@ def inference(config,private,base,filtered,manifest,release,filtered_release,gol
             kwargs={'train_criterion':criterion} if criterion else {}
             trained[name]=fit(model,datasets['train'],datasets['dev'],out/'entrenamiento'/name,cfg,{'version':'REV2','supervision_sha256':bundle.provenance,'reproduccion':'corrida nueva; GOLD no usado para seleccionar'},device=str(device),release=rel,bundle=bundle,evaluation_policy=policy,**kwargs)
             model.eval()
+            checks[name]={'nuevo_entrenamiento':True,'selected_epoch':trained[name]['selected_epoch'],
+                          'best_dev_bce':trained[name]['best_dev_bce'],
+                          'best_pt_sha256':trained[name]['sha256']['best.pt'],
+                          'last_pt_sha256':trained[name]['sha256']['last.pt']}
         else:model,summary=restore(private,name,out,device)
         probs=predict(model,gold_uids,cache,device,policy)
         got[name]=metrics(y,probs,gmask,LABELS)
@@ -222,10 +226,17 @@ def inference(config,private,base,filtered,manifest,release,filtered_release,gol
             from src.gradcam_figures import render_case,render_overview
             plan=read(private/'plan_gradcam.json');examples=[];camchecks=[]
             for case in plan['cases']:
+                case=dict(case)
                 x,m=cache[case['StudyInstanceUID']]
                 result=gradcam(model,model.backbone.layer4[-1],torch.from_numpy(x[None]).to(device),torch.from_numpy(m[None]).to(device),case['class_index'],POLICY_ID)
+                if train:
+                    probability=float(result['probabilities'][0,case['class_index']])
+                    positive=probability>=.5;label=bool(case['weak_label'])
+                    case['category_weak']=('TP' if label else 'FP') if positive else ('FN' if label else 'TN')
+                    case['probability_csv']=probability
                 render_case(out/'gradcam',case,x,result);examples.append((case,x,result,m))
-                camchecks.append({'case_id':case['case_id'],'state_unchanged':True,'zero_positive_map':result['zero_positive_map']})
+                camchecks.append({'case_id':case['case_id'],'state_unchanged':True,'zero_positive_map':result['zero_positive_map'],
+                                  'category_weak':case['category_weak'],'new_training':train})
             render_overview(out/'gradcam/resumen.png',examples);save(out/'gradcam/verificacion.json',camchecks)
         del model
     save(out/'metrics_gold.json',got);save(out/'comparacion_recarga.json',checks)

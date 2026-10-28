@@ -5,6 +5,7 @@ resultados/
 __pycache__/
 *.pyc
 config.local.json
+config.kaggle.local.json
 *.dcm
 *.pt
 *.pth

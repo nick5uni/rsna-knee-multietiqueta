@@ -62,6 +62,18 @@ python pipeline.py --config config.local.json --mode audit
 
 Verifica contratos y reproduce extracción textual y métricas desde CSV, sin inferencia DICOM. **Este modo no constituye por sí solo reproducción completa del clasificador.**
 
+## Ejecución en Kaggle sin editar rutas
+
+Se proporciona `notebooks/36_RSNA_Comando_Unico_REV2.ipynb` y, por el canal privado, `Paquete_Privado_RSNA_REV2_ComandoUnico.zip`. El mismo paquete se utiliza para el equipo y para el evaluador. Se adjuntan la competencia y el paquete privado, se activa T4 e Internet y se ejecuta una celda. El lanzador detecta rutas, comprueba el entorno, prepara dependencias ligeras, ejecuta pruebas y encadena las cuatro configuraciones con el pipeline existente:
+
+```bash
+python ejecutar_kaggle.py --mode train
+```
+
+Los resultados se escriben en una carpeta nueva y se empaquetan automáticamente con checkpoints, predicciones, métricas, Grad-CAM, log y hashes. No se necesitan credenciales GitHub dentro del notebook. Véase `docs/EJECUCION_KAGGLE.md`. El paquete también funciona si Kaggle descomprime el ZIP al crear el dataset privado.
+
+La preparación local no acredita todavía la ejecución T4 completa. No hay reanudación automática del lanzador: una nueva ejecución crea otra carpeta y repite las cuatro configuraciones. Los resultados del informe no se reemplazan por las nuevas salidas sin revisión.
+
 ## Pruebas
 
 ```powershell
