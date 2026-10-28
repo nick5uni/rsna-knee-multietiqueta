@@ -1,0 +1,113 @@
+[
+  {
+    "id": "N01",
+    "texto_artificial": "No hay rotura del LCA ni lesión del LCM.",
+    "esperado": {
+      "ACL": "negativo",
+      "MCL": "negativo"
+    },
+    "obtenido": {
+      "ACL": "negativo",
+      "MCL": "positivo"
+    },
+    "correcto": false,
+    "fallos": {
+      "MCL": {
+        "esperado": "negativo",
+        "obtenido": "positivo"
+      }
+    },
+    "motivo": "Negación coordinada no debe producir positivo en el segundo ligamento."
+  },
+  {
+    "id": "N02",
+    "texto_artificial": "Ligamento cruzado anterior con rotura completa.",
+    "esperado": {
+      "ACL": "positivo"
+    },
+    "obtenido": {
+      "ACL": "incierto"
+    },
+    "correcto": false,
+    "fallos": {
+      "ACL": {
+        "esperado": "positivo",
+        "obtenido": "incierto"
+      }
+    },
+    "motivo": "Con no debe separar una estructura de su rotura."
+  },
+  {
+    "id": "N03",
+    "texto_artificial": "Menisco medial con rotura horizontal.",
+    "esperado": {
+      "Medial Meniscus": "positivo"
+    },
+    "obtenido": {
+      "Medial Meniscus": "incierto"
+    },
+    "correcto": false,
+    "fallos": {
+      "Medial Meniscus": {
+        "esperado": "positivo",
+        "obtenido": "incierto"
+      }
+    },
+    "motivo": "Vínculo estructura con lesión dentro de una cláusula."
+  },
+  {
+    "id": "N04",
+    "texto_artificial": "Sin rotura del menisco medial ni del menisco lateral.",
+    "esperado": {
+      "Medial Meniscus": "negativo",
+      "Lateral Meniscus": "negativo"
+    },
+    "obtenido": {
+      "Medial Meniscus": "negativo",
+      "Lateral Meniscus": "incierto"
+    },
+    "correcto": false,
+    "fallos": {
+      "Lateral Meniscus": {
+        "esperado": "negativo",
+        "obtenido": "incierto"
+      }
+    },
+    "motivo": "Negación coordinada con ni del."
+  },
+  {
+    "id": "N05",
+    "texto_artificial": "No hay derrame articular ni sinovitis.",
+    "esperado": {
+      "Effusion": "negativo",
+      "Synovitis": "negativo"
+    },
+    "obtenido": {
+      "Effusion": "negativo",
+      "Synovitis": "positivo"
+    },
+    "correcto": false,
+    "fallos": {
+      "Synovitis": {
+        "esperado": "negativo",
+        "obtenido": "positivo"
+      }
+    },
+    "motivo": "Control de la coordinación ya contemplada."
+  },
+  {
+    "id": "N06",
+    "texto_artificial": "No hay fractura, pero existe contusión ósea.",
+    "esperado": {
+      "Fracture": "negativo",
+      "Contusion": "positivo"
+    },
+    "obtenido": {
+      "Fracture": "negativo",
+      "Contusion": "positivo"
+    },
+    "correcto": true,
+    "fallos": {},
+    "motivo": "Control de cambio de cláusula."
+  }
+]

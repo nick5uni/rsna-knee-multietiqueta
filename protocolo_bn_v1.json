@@ -1,0 +1,35 @@
+{
+  "policy_id": "BN_por_estudio_v1",
+  "fecha_acuerdo": "2026-10-17",
+  "estado": "supervision_y_filtro_contrastados; notebooks_para_comprobar",
+  "modelos": [
+    "ResNet18_BCE",
+    "ResNet18_FOCAL",
+    "ResNet18_BCE_FILTRO"
+  ],
+  "train": "sin_cambios; BatchNorm original durante optimizacion",
+  "dev_y_exportacion": "estadisticas de los cortes validos de un solo estudio; sin actualizar buffers ni pesos",
+  "batch_size": 1,
+  "max_slices": 8,
+  "seleccion": "min_dev_masked_bce",
+  "seed": 42,
+  "learning_rate": 0.0001,
+  "max_epochs": 20,
+  "patience": 3,
+  "inicializacion": "ImageNet V1 y clasificador nuevo; sin continuar checkpoints originales",
+  "CNN": "sin_cambios; GroupNorm",
+  "gold": "Ya consultado en etapa1; siguiente evaluacion exploratoria. Este notebook no realiza inferencia gold.",
+  "filtro": "Solo TRAIN: 163 negativos OA indirectos excluidos en ResNet18_BCE_FILTRO; DEV comun 364.",
+  "codigo_sha256": {
+    "batchnorm_policy.py": "a4222b80d5a52125844713ce3208267921b6e492f439c303fa55c02a4f4f570c",
+    "training_engine.py": "90e606818b1ef6c6635c73c1799c2f0445d8fb26107039feadcfe460936244c1",
+    "study_resnet.py": "2d0c7e5930a796059bf4da5b738afdfbbc4cad8b5a11fb726246fd1e17b1d079"
+  },
+  "release_original_sha256": "1df57a99d784a7704c341e521e8afbca39ee548828834ce0e927c561af024285",
+  "presupuesto_original_sha256": "a0e34f78631622b534f82443a4f95ecbeec2d4d832b78214088521c0d081f4a8",
+  "version": "protocolo_BNv1_supervision_REV2_18Oct2026",
+  "fecha_supervision": "2026-10-18",
+  "supervision_version": "REV2_consenso168_localizado_18Oct2026_v1",
+  "protocolo_BN_original_sha256": "a4c3d2e77b4c5d95b9e9e61daa2b2a49009543b76a7a29090f8ce5aa5afdf7d6",
+  "implementacion_BN_sin_cambios": true
+}

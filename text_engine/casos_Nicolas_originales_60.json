@@ -1,0 +1,490 @@
+[
+  {
+    "id": "ES001",
+    "origen": "artificial_para_contrato_no_evidencia_clinica",
+    "texto": "Rotura del ligamento cruzado anterior.",
+    "esperado": {
+      "ACL": "positivo"
+    }
+  },
+  {
+    "id": "ES002",
+    "origen": "artificial_para_contrato_no_evidencia_clinica",
+    "texto": "Sin rotura del ligamento cruzado anterior.",
+    "esperado": {
+      "ACL": "negativo"
+    }
+  },
+  {
+    "id": "ES003",
+    "origen": "artificial_para_contrato_no_evidencia_clinica",
+    "texto": "Posible rotura del ligamento cruzado anterior.",
+    "esperado": {
+      "ACL": "incierto"
+    }
+  },
+  {
+    "id": "ES004",
+    "origen": "artificial_para_contrato_no_evidencia_clinica",
+    "texto": "Hallazgos: no se aportan otros datos.",
+    "esperado": {
+      "ACL": "no_mencionado"
+    }
+  },
+  {
+    "id": "ES005",
+    "origen": "artificial_para_contrato_no_evidencia_clinica",
+    "texto": "Lesión del ligamento colateral medial.",
+    "esperado": {
+      "MCL": "positivo"
+    }
+  },
+  {
+    "id": "ES006",
+    "origen": "artificial_para_contrato_no_evidencia_clinica",
+    "texto": "Ligamento colateral medial sin lesiones.",
+    "esperado": {
+      "MCL": "negativo"
+    }
+  },
+  {
+    "id": "ES007",
+    "origen": "artificial_para_contrato_no_evidencia_clinica",
+    "texto": "Sospecha de lesión del ligamento colateral medial.",
+    "esperado": {
+      "MCL": "incierto"
+    }
+  },
+  {
+    "id": "ES008",
+    "origen": "artificial_para_contrato_no_evidencia_clinica",
+    "texto": "Hallazgos: no se aportan otros datos.",
+    "esperado": {
+      "MCL": "no_mencionado"
+    }
+  },
+  {
+    "id": "ES009",
+    "origen": "artificial_para_contrato_no_evidencia_clinica",
+    "texto": "Rotura del menisco medial.",
+    "esperado": {
+      "Medial Meniscus": "positivo"
+    }
+  },
+  {
+    "id": "ES010",
+    "origen": "artificial_para_contrato_no_evidencia_clinica",
+    "texto": "Menisco medial sin signos de rotura.",
+    "esperado": {
+      "Medial Meniscus": "negativo"
+    }
+  },
+  {
+    "id": "ES011",
+    "origen": "artificial_para_contrato_no_evidencia_clinica",
+    "texto": "Posible rotura del menisco medial.",
+    "esperado": {
+      "Medial Meniscus": "incierto"
+    }
+  },
+  {
+    "id": "ES012",
+    "origen": "artificial_para_contrato_no_evidencia_clinica",
+    "texto": "Hallazgos: no se aportan otros datos.",
+    "esperado": {
+      "Medial Meniscus": "no_mencionado"
+    }
+  },
+  {
+    "id": "ES013",
+    "origen": "artificial_para_contrato_no_evidencia_clinica",
+    "texto": "Rotura del menisco externo.",
+    "esperado": {
+      "Lateral Meniscus": "positivo"
+    }
+  },
+  {
+    "id": "ES014",
+    "origen": "artificial_para_contrato_no_evidencia_clinica",
+    "texto": "No hay rotura del menisco externo.",
+    "esperado": {
+      "Lateral Meniscus": "negativo"
+    }
+  },
+  {
+    "id": "ES015",
+    "origen": "artificial_para_contrato_no_evidencia_clinica",
+    "texto": "No se descarta rotura del menisco externo.",
+    "esperado": {
+      "Lateral Meniscus": "incierto"
+    }
+  },
+  {
+    "id": "ES016",
+    "origen": "artificial_para_contrato_no_evidencia_clinica",
+    "texto": "Hallazgos: no se aportan otros datos.",
+    "esperado": {
+      "Lateral Meniscus": "no_mencionado"
+    }
+  },
+  {
+    "id": "ES017",
+    "origen": "artificial_para_contrato_no_evidencia_clinica",
+    "texto": "Artrosis femorotibial medial.",
+    "esperado": {
+      "Medial OA": "positivo"
+    }
+  },
+  {
+    "id": "ES018",
+    "origen": "artificial_para_contrato_no_evidencia_clinica",
+    "texto": "Sin artrosis del compartimento medial.",
+    "esperado": {
+      "Medial OA": "negativo"
+    }
+  },
+  {
+    "id": "ES019",
+    "origen": "artificial_para_contrato_no_evidencia_clinica",
+    "texto": "Posible artrosis del compartimento medial.",
+    "esperado": {
+      "Medial OA": "incierto"
+    }
+  },
+  {
+    "id": "ES020",
+    "origen": "artificial_para_contrato_no_evidencia_clinica",
+    "texto": "Hallazgos: no se aportan otros datos.",
+    "esperado": {
+      "Medial OA": "no_mencionado"
+    }
+  },
+  {
+    "id": "ES021",
+    "origen": "artificial_para_contrato_no_evidencia_clinica",
+    "texto": "Artrosis femorotibial lateral.",
+    "esperado": {
+      "Lateral OA": "positivo"
+    }
+  },
+  {
+    "id": "ES022",
+    "origen": "artificial_para_contrato_no_evidencia_clinica",
+    "texto": "Sin artrosis del compartimento lateral.",
+    "esperado": {
+      "Lateral OA": "negativo"
+    }
+  },
+  {
+    "id": "ES023",
+    "origen": "artificial_para_contrato_no_evidencia_clinica",
+    "texto": "Sospecha de artrosis del compartimento lateral.",
+    "esperado": {
+      "Lateral OA": "incierto"
+    }
+  },
+  {
+    "id": "ES024",
+    "origen": "artificial_para_contrato_no_evidencia_clinica",
+    "texto": "Hallazgos: no se aportan otros datos.",
+    "esperado": {
+      "Lateral OA": "no_mencionado"
+    }
+  },
+  {
+    "id": "ES025",
+    "origen": "artificial_para_contrato_no_evidencia_clinica",
+    "texto": "Artrosis patelofemoral.",
+    "esperado": {
+      "PF OA": "positivo"
+    }
+  },
+  {
+    "id": "ES026",
+    "origen": "artificial_para_contrato_no_evidencia_clinica",
+    "texto": "Sin artrosis patelofemoral.",
+    "esperado": {
+      "PF OA": "negativo"
+    }
+  },
+  {
+    "id": "ES027",
+    "origen": "artificial_para_contrato_no_evidencia_clinica",
+    "texto": "Posible artrosis patelofemoral.",
+    "esperado": {
+      "PF OA": "incierto"
+    }
+  },
+  {
+    "id": "ES028",
+    "origen": "artificial_para_contrato_no_evidencia_clinica",
+    "texto": "Hallazgos: no se aportan otros datos.",
+    "esperado": {
+      "PF OA": "no_mencionado"
+    }
+  },
+  {
+    "id": "ES029",
+    "origen": "artificial_para_contrato_no_evidencia_clinica",
+    "texto": "Moderado derrame articular.",
+    "esperado": {
+      "Effusion": "positivo"
+    }
+  },
+  {
+    "id": "ES030",
+    "origen": "artificial_para_contrato_no_evidencia_clinica",
+    "texto": "No hay derrame articular.",
+    "esperado": {
+      "Effusion": "negativo"
+    }
+  },
+  {
+    "id": "ES031",
+    "origen": "artificial_para_contrato_no_evidencia_clinica",
+    "texto": "No puede descartarse derrame articular.",
+    "esperado": {
+      "Effusion": "incierto"
+    }
+  },
+  {
+    "id": "ES032",
+    "origen": "artificial_para_contrato_no_evidencia_clinica",
+    "texto": "Hallazgos: no se aportan otros datos.",
+    "esperado": {
+      "Effusion": "no_mencionado"
+    }
+  },
+  {
+    "id": "ES033",
+    "origen": "artificial_para_contrato_no_evidencia_clinica",
+    "texto": "Sinovitis.",
+    "esperado": {
+      "Synovitis": "positivo"
+    }
+  },
+  {
+    "id": "ES034",
+    "origen": "artificial_para_contrato_no_evidencia_clinica",
+    "texto": "Sin sinovitis.",
+    "esperado": {
+      "Synovitis": "negativo"
+    }
+  },
+  {
+    "id": "ES035",
+    "origen": "artificial_para_contrato_no_evidencia_clinica",
+    "texto": "Posible sinovitis.",
+    "esperado": {
+      "Synovitis": "incierto"
+    }
+  },
+  {
+    "id": "ES036",
+    "origen": "artificial_para_contrato_no_evidencia_clinica",
+    "texto": "Hallazgos: no se aportan otros datos.",
+    "esperado": {
+      "Synovitis": "no_mencionado"
+    }
+  },
+  {
+    "id": "ES037",
+    "origen": "artificial_para_contrato_no_evidencia_clinica",
+    "texto": "Quiste de Baker.",
+    "esperado": {
+      "Baker's": "positivo"
+    }
+  },
+  {
+    "id": "ES038",
+    "origen": "artificial_para_contrato_no_evidencia_clinica",
+    "texto": "No hay quistes poplíteos.",
+    "esperado": {
+      "Baker's": "negativo"
+    }
+  },
+  {
+    "id": "ES039",
+    "origen": "artificial_para_contrato_no_evidencia_clinica",
+    "texto": "Sospecha de quiste de Baker.",
+    "esperado": {
+      "Baker's": "incierto"
+    }
+  },
+  {
+    "id": "ES040",
+    "origen": "artificial_para_contrato_no_evidencia_clinica",
+    "texto": "Hallazgos: no se aportan otros datos.",
+    "esperado": {
+      "Baker's": "no_mencionado"
+    }
+  },
+  {
+    "id": "ES041",
+    "origen": "artificial_para_contrato_no_evidencia_clinica",
+    "texto": "Contusión ósea tibial.",
+    "esperado": {
+      "Contusion": "positivo"
+    }
+  },
+  {
+    "id": "ES042",
+    "origen": "artificial_para_contrato_no_evidencia_clinica",
+    "texto": "Sin contusión ósea.",
+    "esperado": {
+      "Contusion": "negativo"
+    }
+  },
+  {
+    "id": "ES043",
+    "origen": "artificial_para_contrato_no_evidencia_clinica",
+    "texto": "Posible contusión ósea tibial.",
+    "esperado": {
+      "Contusion": "incierto"
+    }
+  },
+  {
+    "id": "ES044",
+    "origen": "artificial_para_contrato_no_evidencia_clinica",
+    "texto": "Hallazgos: no se aportan otros datos.",
+    "esperado": {
+      "Contusion": "no_mencionado"
+    }
+  },
+  {
+    "id": "ES045",
+    "origen": "artificial_para_contrato_no_evidencia_clinica",
+    "texto": "Fractura del platillo tibial.",
+    "esperado": {
+      "Fracture": "positivo"
+    }
+  },
+  {
+    "id": "ES046",
+    "origen": "artificial_para_contrato_no_evidencia_clinica",
+    "texto": "Sin fractura.",
+    "esperado": {
+      "Fracture": "negativo"
+    }
+  },
+  {
+    "id": "ES047",
+    "origen": "artificial_para_contrato_no_evidencia_clinica",
+    "texto": "No se descarta fractura del platillo tibial.",
+    "esperado": {
+      "Fracture": "incierto"
+    }
+  },
+  {
+    "id": "ES048",
+    "origen": "artificial_para_contrato_no_evidencia_clinica",
+    "texto": "Hallazgos: no se aportan otros datos.",
+    "esperado": {
+      "Fracture": "no_mencionado"
+    }
+  },
+  {
+    "id": "ES049",
+    "origen": "artificial_para_contrato_no_evidencia_clinica",
+    "texto": "Sin derrame ni sinovitis.",
+    "esperado": {
+      "Effusion": "negativo",
+      "Synovitis": "negativo"
+    }
+  },
+  {
+    "id": "ES050",
+    "origen": "artificial_para_contrato_no_evidencia_clinica",
+    "texto": "Sin derrame, pero hay sinovitis.",
+    "esperado": {
+      "Effusion": "negativo",
+      "Synovitis": "positivo"
+    }
+  },
+  {
+    "id": "ES051",
+    "origen": "artificial_para_contrato_no_evidencia_clinica",
+    "texto": "Derrame articular sin sinovitis.",
+    "esperado": {
+      "Effusion": "positivo",
+      "Synovitis": "negativo"
+    }
+  },
+  {
+    "id": "ES052",
+    "origen": "artificial_para_contrato_no_evidencia_clinica",
+    "texto": "No hay fractura. Derrame articular.",
+    "esperado": {
+      "Fracture": "negativo",
+      "Effusion": "positivo"
+    }
+  },
+  {
+    "id": "ES053",
+    "origen": "artificial_para_contrato_no_evidencia_clinica",
+    "texto": "Sin rotura del menisco medial. Rotura del menisco lateral.",
+    "esperado": {
+      "Medial Meniscus": "negativo",
+      "Lateral Meniscus": "positivo"
+    }
+  },
+  {
+    "id": "ES054",
+    "origen": "artificial_para_contrato_no_evidencia_clinica",
+    "texto": "No hay rotura del LCP.",
+    "esperado": {
+      "ACL": "no_mencionado"
+    }
+  },
+  {
+    "id": "ES055",
+    "origen": "artificial_para_contrato_no_evidencia_clinica",
+    "texto": "Quiste parameniscal.",
+    "esperado": {
+      "Baker's": "no_mencionado"
+    }
+  },
+  {
+    "id": "ES056",
+    "origen": "artificial_para_contrato_no_evidencia_clinica",
+    "texto": "Tenosinovitis.",
+    "esperado": {
+      "Synovitis": "no_mencionado"
+    }
+  },
+  {
+    "id": "ES057",
+    "origen": "artificial_para_contrato_no_evidencia_clinica",
+    "texto": "Hallazgos: rotura del LCA. Conclusión: LCA sin rotura.",
+    "esperado": {
+      "ACL": "incierto"
+    }
+  },
+  {
+    "id": "ES058",
+    "origen": "artificial_para_contrato_no_evidencia_clinica",
+    "texto": "Antecedentes clínicos: fractura de rodilla. Hallazgos: derrame articular.",
+    "esperado": {
+      "Fracture": "no_mencionado",
+      "Effusion": "positivo"
+    }
+  },
+  {
+    "id": "ES059",
+    "origen": "artificial_para_contrato_no_evidencia_clinica",
+    "texto": "Técnica: valorar rotura del LCA. Hallazgos: derrame articular.",
+    "esperado": {
+      "ACL": "no_mencionado",
+      "Effusion": "positivo"
+    }
+  },
+  {
+    "id": "ES060",
+    "origen": "artificial_para_contrato_no_evidencia_clinica",
+    "texto": "Hallazgos: No se descarta sinovitis. No hay derrame.",
+    "esperado": {
+      "Synovitis": "incierto",
+      "Effusion": "negativo"
+    }
+  }
+]

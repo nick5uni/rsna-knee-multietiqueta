@@ -1,0 +1,106 @@
+[
+  {
+    "idioma": "en",
+    "texto_artificial": "The tibiofemoral and patellofemoral articular cartilage is normal.",
+    "resultado_NB34": [
+      {
+        "condicion": "Medial OA",
+        "estado": "no_mencionado",
+        "origen": "sin_decision"
+      },
+      {
+        "condicion": "Lateral OA",
+        "estado": "no_mencionado",
+        "origen": "sin_decision"
+      },
+      {
+        "condicion": "PF OA",
+        "estado": "negativo",
+        "origen": "indirecto_OA"
+      }
+    ],
+    "referencia_historica_EN": {
+      "Medial OA": true,
+      "Lateral OA": true,
+      "PF OA": true
+    },
+    "alcance_a_confirmar": "Conservar regla conjunta ampliada en ambos idiomas o documentar explícitamente su restricción antes de congelar."
+  },
+  {
+    "idioma": "es",
+    "texto_artificial": "El cartílago tibiofemoral y patelofemoral es normal.",
+    "resultado_NB34": [
+      {
+        "condicion": "Medial OA",
+        "estado": "no_mencionado",
+        "origen": "sin_decision"
+      },
+      {
+        "condicion": "Lateral OA",
+        "estado": "no_mencionado",
+        "origen": "sin_decision"
+      },
+      {
+        "condicion": "PF OA",
+        "estado": "negativo",
+        "origen": "indirecto_OA"
+      }
+    ],
+    "referencia_historica_EN": null,
+    "alcance_a_confirmar": "Conservar regla conjunta ampliada en ambos idiomas o documentar explícitamente su restricción antes de congelar."
+  },
+  {
+    "idioma": "en",
+    "texto_artificial": "Normal tibiofemoral and patellofemoral articular cartilage.",
+    "resultado_NB34": [
+      {
+        "condicion": "Medial OA",
+        "estado": "no_mencionado",
+        "origen": "sin_decision"
+      },
+      {
+        "condicion": "Lateral OA",
+        "estado": "no_mencionado",
+        "origen": "sin_decision"
+      },
+      {
+        "condicion": "PF OA",
+        "estado": "negativo",
+        "origen": "indirecto_OA"
+      }
+    ],
+    "referencia_historica_EN": {
+      "Medial OA": true,
+      "Lateral OA": true,
+      "PF OA": true
+    },
+    "alcance_a_confirmar": "Conservar regla conjunta ampliada en ambos idiomas o documentar explícitamente su restricción antes de congelar."
+  },
+  {
+    "idioma": "en",
+    "texto_artificial": "Medial compartment cartilage is normal. Lateral compartment cartilage is normal. Patellofemoral cartilage is normal.",
+    "resultado_NB34": [
+      {
+        "condicion": "Medial OA",
+        "estado": "negativo",
+        "origen": "indirecto_OA"
+      },
+      {
+        "condicion": "Lateral OA",
+        "estado": "negativo",
+        "origen": "indirecto_OA"
+      },
+      {
+        "condicion": "PF OA",
+        "estado": "negativo",
+        "origen": "indirecto_OA"
+      }
+    ],
+    "referencia_historica_EN": {
+      "Medial OA": true,
+      "Lateral OA": true,
+      "PF OA": true
+    },
+    "alcance_a_confirmar": "Conservar regla conjunta ampliada en ambos idiomas o documentar explícitamente su restricción antes de congelar."
+  }
+]

@@ -1,0 +1,11 @@
+{
+  "data_csv": "/ruta/autorizada/train.csv",
+  "data_series_csv": "/ruta/autorizada/train_series.csv",
+  "dataset_zip": "/ruta/autorizada/rsna-knee-abnormality-detection.zip",
+  "data_root": null,
+  "private_inputs": "private",
+  "cache_root": "cache",
+  "output_root": "resultados",
+  "cpu_threads": 4,
+  "device": "cpu"
+}
