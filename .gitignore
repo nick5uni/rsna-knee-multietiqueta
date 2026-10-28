@@ -1,0 +1,16 @@
+private/
+cache/
+resultados/
+.venv*/
+__pycache__/
+*.pyc
+config.local.json
+*.dcm
+*.pt
+*.pth
+*.zip
+.env
+kaggle.json
+temp_pruebas/
+text_engine/resultados_pruebas_v1_2.json
+*.log
